@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #5f7a61;
+    font-family: 'roboto',sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.music-player{
+    width: 350px;
+    height: 550px;
+    background-color:rgba(255, 255, 255, 0.08) ;
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(255, 255, 255, 0.1);
+    padding:30px ;
+    overflow: hidden;
+    color: #d5eebb;
+}
+.music-name{
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.artist-name{
+    text-align: center;
+    font-weight:500 ;
+    text-transform: capitalize;
+}
+.disk{
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: block;
+    border-radius: 50%;
+    margin: 40px auto;
+    background-image: url("./image/mony.jpg");
+    object-fit: cover;
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.08);
+    animation: rotate 20s linear infinite;
+    animation-play-state:paused ;
+}
+.disk.play{
+    animation-play-state: running;
+}
+.disk::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:#5f7a61;
+
+}
+.song-slider{
+    position: relative;
+    width: 100%;
+}
+.seek-bar{
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #7fc8a9;
+    cursor: pointer;
+    overflow: hidden;
+}
+.seek-bar::-webkit-slider-thumb{
+    appearance: none;
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400px #d5eebb;
+}
+.current-time,.song-duration-time{
+    font-size: 14px;
+}
+.song-duration-time{
+    position: absolute;
+    right: 0;
+}
+.group-button{
+    /* font-size: 4rem; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.group-button button{
+    text-align: center;
+    font-size: 2rem;
+    background-color:#d5eebb ;
+    border: 0;
+    outline: 0;
+    padding:10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #5f7a61;
+}
+.group-button button:active{
+    transform: translate(2px,2px);
+}
+
+.play-btn.play{
+    animation: pulse 2s linear infinite;
+}
+/* .play-icon.pause{
+    
+} */
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100%{
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
