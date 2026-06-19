@@ -5,4 +5,4 @@
 deploy Link 👇👇🏿
 
 
-if you wnat to see (https://mr-mohammadi-sab.github.io/music-player/)
+if you wnat to see https://music-player-kohl-nine.vercel.app/
